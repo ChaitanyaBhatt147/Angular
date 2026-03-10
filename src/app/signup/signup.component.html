@@ -1,26 +1,32 @@
 <div align="center">
     <h1>User Registration</h1>
-    <form (submit)="signup()">
+    <h2 [style.color]="form.success ? 'green' : 'red'">{{form.message}}</h2>
+    <form (submit)="signUp()">
         <table>
             <tr>
                 <th>First Name</th>
                 <td><input type="text" name="firstName" [(ngModel)]="form.data.firstName" placeholder="enter your first name"></td>
+                <td><span style="color: red;">{{form.inputerror.firstName}}</span></td>
             </tr>
             <tr>
                 <th>Last Name</th>
                 <td><input type="text" name="lastName" [(ngModel)]="form.data.lastName" placeholder="enter your last name"></td>
+                <td><span style="color: red;">{{form.inputerror.lastName}}</span></td>
             </tr>
             <tr>
                 <th>Login</th>
-                <td><input type="email" name="login" [(ngModel)]="form.data.login" placeholder="enter your login"></td>
+                <td><input type="email" name="loginId" [(ngModel)]="form.data.loginId" placeholder="enter your login"></td>
+                <td><span style="color: red;">{{form.inputerror.loginId}}</span></td>
             </tr>
             <tr>
                 <th>Password</th>
                 <td><input type="password" name="password" [(ngModel)]="form.data.password" placeholder="enter your password"></td>
+                <td><span style="color: red;">{{form.inputerror.password}}</span></td>
             </tr>
             <tr>
                 <th>DOB</th>
                 <td><input type="date" name="dob" [(ngModel)]="form.data.dob" style="width: 165px;"></td>
+                <td><span style="color: red;">{{form.inputerror.dob}}</span></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><input  type="submit" value="save"></td>

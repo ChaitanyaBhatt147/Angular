@@ -1,0 +1,21 @@
+<div align="center">
+    <h1>Login</h1>
+    <h2 style="color: red;">{{form.message}}</h2>
+    <form (submit)="signIn()">
+        <table>
+            <tr>
+                <th>Login</th>
+                <td><input type="email" name="loginId" [(ngModel)]="form.data.login" placeholder="enter your login"></td>
+                <td><span style="color: red;">{{form.inputerror.login}}</span></td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td><input type="password" name="password" [(ngModel)]="form.data.password" placeholder="enter your password"></td>
+                <td><span style="color: red;">{{form.inputerror.password}}</span></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input  type="submit" value="login"></td>
+            </tr>
+        </table>
+    </form>
+</div>
